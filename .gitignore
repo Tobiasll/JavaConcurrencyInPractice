@@ -1,0 +1,32 @@
+# Created by .ignore support plugin (hsz.mobi)
+### IntelliJ IDEA ###
+.idea
+
+service-course-api/target
+
+service-course-core/target
+
+service-course-task/target
+
+service-course-deliver/target
+
+logs/
+
+service-course-api/service-course-api.iml
+
+service-course-core/service-course-core.iml
+
+service-course-task/service-course-task.iml
+
+service-course-deliver/service-course-deliver.iml
+
+
+service-course-parent.iml
+/service-course-core/src/main/resources/rebel.xml
+/service-course-api/src/main/resources/rebel.xml
+/.logs/
+
+
+/jar/.logs/
+/jar/target/
+/jrebel-classpath-12128.jar
