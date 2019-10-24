@@ -1,5 +1,6 @@
 package tobias.book_concurrent_programming.chapter6;
 
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.LockSupport;
 import java.util.concurrent.locks.ReentrantLock;
@@ -13,6 +14,9 @@ public class PrintTwoNumberAndOneCharacterByLock1 {
   private static int[] num = {1, 2, 3, 4, 5, 6, 7, 8};
   private static char[] chars = {'A', 'B', 'C', 'D' };
   private static volatile boolean flag;
+  private static volatile AtomicInteger count = new AtomicInteger();
+  private final static Integer maxForTimes = 5;
+
 
   public static void main(String[] args) throws InterruptedException {
 
@@ -22,7 +26,11 @@ public class PrintTwoNumberAndOneCharacterByLock1 {
         while (true) {
           flag = true;
           for (int i = 0; i < num.length; i++) {
-            System.out.println(num[i]);
+
+            if (count.get() < maxForTimes) {
+              System.out.println(num[i]);
+
+            }
             if (i % 2 != 0) {
               conditionB.signalAll();
               conditionA.await();
@@ -30,7 +38,12 @@ public class PrintTwoNumberAndOneCharacterByLock1 {
 
           }
           conditionB.signalAll();
+          count.incrementAndGet();
           System.out.println("begin to shutdown ThreadNumber and notify charThread");
+          if (count.get() == maxForTimes) {
+            System.out.println("count " + count.get());
+            Thread.currentThread().interrupt();
+          }
         }
       } catch (InterruptedException ignored) {
       } finally {
@@ -43,8 +56,14 @@ public class PrintTwoNumberAndOneCharacterByLock1 {
 
         lock.lock();
         while (true) {
+          if (count.get() == maxForTimes) {
+            System.out.println("count " + count.get());
+            Thread.currentThread().interrupt();
+          }
           for (char aChar : chars) {
-            System.out.println(aChar);
+            if (count.get() < maxForTimes) {
+              System.out.println(aChar);
+            }
             conditionA.signalAll();
             conditionB.await();
           }

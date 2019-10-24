@@ -1,12 +1,14 @@
 package tobias.book_concurrent_programming.chapter1;
 
+import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.LockSupport;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class PrintTwoNumberAndOneCharacterBySynchronize {
 
   private static int[] num = {1, 2, 3, 4, 5, 6, 7, 8};
   private static char[] chars = {'A', 'B', 'C', 'D' };
-
+  private static Lock lock = new ReentrantLock();
 
   public static void main(String[] args) throws InterruptedException {
 

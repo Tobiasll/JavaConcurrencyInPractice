@@ -14,7 +14,7 @@ public class PrintTwoNumberAndOneCharacterByLock {
 
   public static void main(String[] args) throws InterruptedException {
 
-    for (int x = 0; x < 1000; x++) {
+    for (int x = 0; x < 1; x++) {
       Thread numThread = new Thread(() -> {
         try {
           lock.lock();
@@ -48,7 +48,7 @@ public class PrintTwoNumberAndOneCharacterByLock {
         }
       });
       numThread.start();
-      Thread.sleep(5);
+//      Thread.sleep(1);
       charThread.start();
 
       numThread.join();

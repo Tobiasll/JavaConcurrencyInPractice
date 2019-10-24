@@ -29,7 +29,7 @@ public class QueueWateDemo1 {
             QUEUE.notifyAll();
           }
         }).start();
-
+        Thread.sleep(100);
         new Thread(() -> {
           synchronized (QUEUE) {
             while (QUEUE.size() == 0) {
