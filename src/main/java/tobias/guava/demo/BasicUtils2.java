@@ -9,7 +9,7 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 public class BasicUtils2 {
 
   public static void main(String[] args) {
-    List<Integer> list  = ImmutableList.of(1, 2, 3, 4);
+    List<Integer> list = ImmutableList.of(1, 2, 3, 4);
     Ordering ordering = new Ordering<Integer>() {
       @Override
       public int compare(@Nullable Integer left, @Nullable Integer right) {

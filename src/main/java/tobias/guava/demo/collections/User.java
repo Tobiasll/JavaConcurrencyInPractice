@@ -1,6 +1,7 @@
 package tobias.guava.demo.collections;
 
 public class User {
+
   private String name;
   private int age;
 

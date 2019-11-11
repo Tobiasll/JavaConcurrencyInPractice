@@ -14,7 +14,8 @@ public class CyclicBarrierDemo1 {
 
   public static void main(String[] args) throws InterruptedException {
 
-    ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+    ExecutorService executorService = Executors
+        .newFixedThreadPool(Runtime.getRuntime().availableProcessors());
     for (int i = 0; i < THREAD_COUNT; i++) {
       Thread.sleep(500);
       executorService.execute(() -> {

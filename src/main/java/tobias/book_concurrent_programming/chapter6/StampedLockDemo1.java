@@ -150,12 +150,12 @@ public class StampedLockDemo1 {
     Thread.sleep(100);
     System.out.println(p);
     VarHandle varHandleX = MethodHandles.privateLookupIn(p.getClass(), MethodHandles.lookup())
-                               .findVarHandle(p.getClass(), "x", double.class);
+                                        .findVarHandle(p.getClass(), "x", double.class);
     varHandleX.set(p, 2.3);
     System.out.println(p);
-    Class pClasss =  MethodHandles.lookup().findClass(p.getClass().getCanonicalName());
+    Class pClasss = MethodHandles.lookup().findClass(p.getClass().getCanonicalName());
     VarHandle varHandleY = MethodHandles.privateLookupIn(pClasss, MethodHandles.lookup())
-                               .findVarHandle(pClasss, "y", double.class);
+                                        .findVarHandle(pClasss, "y", double.class);
     Object o = pClasss.getDeclaredConstructor().newInstance();
     System.out.println(o);
     System.out.println(varHandleY.get(o));

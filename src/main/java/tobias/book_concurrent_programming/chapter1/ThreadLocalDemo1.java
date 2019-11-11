@@ -2,7 +2,7 @@ package tobias.book_concurrent_programming.chapter1;
 
 public class ThreadLocalDemo1 {
 
-  private  static ThreadLocal<String> threadLocal = new ThreadLocal<>();
+  private static ThreadLocal<String> threadLocal = new ThreadLocal<>();
   private static InheritableThreadLocal<String> inheritableThreadLocal = new InheritableThreadLocal<>();
 
   public static void main(String[] args) {
@@ -15,7 +15,7 @@ public class ThreadLocalDemo1 {
     threadLocal.set("mainTest");
     inheritableThreadLocal.set("inheritableThreadLocal");
     Thread threadA = new Thread(() -> {
-      threadLocal.set("Thread A get :: " );
+      threadLocal.set("Thread A get :: ");
       try {
         Thread.sleep(1000);
       } catch (InterruptedException e) {

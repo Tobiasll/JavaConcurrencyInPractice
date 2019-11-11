@@ -2,10 +2,10 @@ package tobias.part_one.chapter3;
 
 public class Visibility {
 
-  private static boolean flag ;
-  private static Integer number =  0;
+  private static boolean flag;
+  private static Integer number = 0;
 
-  private static class WhileThread extends Thread{
+  private static class WhileThread extends Thread {
 
     @Override
     public void run() {
@@ -18,7 +18,7 @@ public class Visibility {
   }
 
   public static void main(String[] args) {
-    
+
     new WhileThread().start();
 
     /*new Thread(() -> {

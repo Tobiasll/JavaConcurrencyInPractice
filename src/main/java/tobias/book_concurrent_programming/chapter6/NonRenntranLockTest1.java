@@ -10,7 +10,7 @@ public class NonRenntranLockTest1 {
   private static Condition nonFull = lock.newCondition();
   private static LinkedBlockingQueue<String> queue = new LinkedBlockingQueue<>();
   private static int queueSize = 20;
-  private static int index ;
+  private static int index;
 
   public static void main(String[] args) {
 
@@ -50,7 +50,6 @@ public class NonRenntranLockTest1 {
 
     product.start();
     consumer.start();
-
 
     //0000 0000 0000 0000 1111 1111 1111 1111
     //1111 1111 1111 1111 0000 1111 1110 1010

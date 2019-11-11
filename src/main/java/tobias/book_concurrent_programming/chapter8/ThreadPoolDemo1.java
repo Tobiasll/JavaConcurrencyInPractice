@@ -29,12 +29,12 @@ public class ThreadPoolDemo1 {
 
     @Override
     public long getDelay(@NonNull TimeUnit unit) {
-      return unit.convert(expect - System.currentTimeMillis() , TimeUnit.MILLISECONDS);
+      return unit.convert(expect - System.currentTimeMillis(), TimeUnit.MILLISECONDS);
     }
 
     @Override
     public int compareTo(@NonNull Delayed o) {
-      return (int) (this.getDelay(TimeUnit.MILLISECONDS) - o.getDelay(TimeUnit.MILLISECONDS) );
+      return (int) (this.getDelay(TimeUnit.MILLISECONDS) - o.getDelay(TimeUnit.MILLISECONDS));
     }
 
     @Override
@@ -51,13 +51,14 @@ public class ThreadPoolDemo1 {
     DelayQueue<Task> delayQueue = new DelayQueue<>();
     Random random = new Random();
 
-    for (int i = 0; i  < 100; i++) {
+    for (int i = 0; i < 100; i++) {
       delayQueue.add(new Task("task" + i, random.nextInt(9999) + 1000));
     }
     Future<String>[] tasks = new Future[100];
     for (int i = 0; i < 100; i++) {
       ExecutorService executorService = Executors.newWorkStealingPool();
-      tasks[i] = executorService.submit(() -> delayQueue.take() + " thread: = "+ Thread.currentThread().getName());
+      tasks[i] = executorService
+          .submit(() -> delayQueue.take() + " thread: = " + Thread.currentThread().getName());
       System.out.println("submit");
     }
     System.out.println("finish to submit");

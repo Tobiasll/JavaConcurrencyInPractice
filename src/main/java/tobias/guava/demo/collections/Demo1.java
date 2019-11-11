@@ -41,8 +41,6 @@ public class Demo1 {
     beanMap.put("test", 1);
     System.out.println(beanMap);
 
-
-
     System.out.println(beanMap);
 
   }

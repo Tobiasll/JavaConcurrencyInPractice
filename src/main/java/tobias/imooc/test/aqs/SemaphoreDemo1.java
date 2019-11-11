@@ -15,9 +15,7 @@ public class SemaphoreDemo1 {
     Semaphore semaphore = new Semaphore(5);
 
     for (int i = 0; i < THREAD_COUNT; i++) {
-      executorService.execute(() -> {
-        count2(semaphore);
-      });
+      executorService.execute(() -> count2(semaphore));
     }
 
     executorService.shutdown();

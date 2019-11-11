@@ -29,7 +29,7 @@ public class LinkedBlockingQueueDemo1 {
         lock.unlock();
       }
     });
-    
+
     thread.start();
   }
 

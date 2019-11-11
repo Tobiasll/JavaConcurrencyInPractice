@@ -1,5 +1,6 @@
 package tobias.book_concurrent_programming.chapter6;
-import	java.util.concurrent.locks.Condition;
+
+import java.util.concurrent.locks.Condition;
 
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -16,7 +17,7 @@ public class AQSConditionDemo1 {
         System.out.println("begin to await");
         condition.await();
         System.out.println("end to await");
-      }catch (Exception ignored) {
+      } catch (Exception ignored) {
 
       } finally {
         System.out.println("unlock");

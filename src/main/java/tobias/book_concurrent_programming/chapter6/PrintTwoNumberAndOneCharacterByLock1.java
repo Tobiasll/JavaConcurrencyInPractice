@@ -12,7 +12,7 @@ public class PrintTwoNumberAndOneCharacterByLock1 {
   private static Condition conditionA = lock.newCondition();
   private static Condition conditionB = lock.newCondition();
   private static int[] num = {1, 2, 3, 4, 5, 6, 7, 8};
-  private static char[] chars = {'A', 'B', 'C', 'D' };
+  private static char[] chars = {'A', 'B', 'C', 'D'};
   private static volatile boolean flag;
   private static volatile AtomicInteger count = new AtomicInteger();
   private final static Integer maxForTimes = 5;

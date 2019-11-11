@@ -23,7 +23,6 @@ public class DeadLockDemo1 {
       }
     });
 
-
     Thread threadB = new Thread(() -> {
       synchronized (objectA) {
         System.out.println("获得对象A锁");

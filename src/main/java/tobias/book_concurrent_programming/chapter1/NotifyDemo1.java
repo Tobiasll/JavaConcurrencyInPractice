@@ -35,7 +35,7 @@ public class NotifyDemo1 {
       System.out.println("get lock " + Thread.currentThread().getName());
       synchronized (object) {
         System.out.println("start notify " + Thread.currentThread().getName());
-          object.notifyAll();
+        object.notifyAll();
         System.out.println("end notify" + Thread.currentThread().getName());
       }
     }, "ThreadC");

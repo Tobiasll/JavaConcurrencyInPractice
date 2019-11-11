@@ -49,7 +49,6 @@ public class AtomicLongCountDemo1 {
     threadB.start();
     threadC.start();
 
-
     threadA.join();
     threadB.join();
     threadC.join();

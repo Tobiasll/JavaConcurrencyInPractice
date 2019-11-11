@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
 public class PrintTwoNumberAndOneCharacterBySynchronize {
 
   private static int[] num = {1, 2, 3, 4, 5, 6, 7, 8};
-  private static char[] chars = {'A', 'B', 'C', 'D' };
+  private static char[] chars = {'A', 'B', 'C', 'D'};
   private static Lock lock = new ReentrantLock();
 
   public static void main(String[] args) throws InterruptedException {

@@ -1,10 +1,12 @@
 package tobias.book_concurrent_programming.chapter1;
+
 public class JoinDemo1 {
 
   public static void main(String[] args) throws InterruptedException {
     Thread threadA = new Thread(() -> {
       System.out.println("threadA run");
-      while (true) {}
+      while (true) {
+      }
 
     });
 

@@ -67,7 +67,7 @@ public class Test {
   public void test4() throws Exception {
     Map<String, String> map = new HashMap<>(33);
     map.put("dsd", "dsd");
-    Class [] classes = map.getClass().getDeclaredClasses();
+    Class[] classes = map.getClass().getDeclaredClasses();
     Class nodeClass = null;
     for (Class aClass : classes) {
       if (aClass.getName().equals("java.util.HashMap$Node")) {
@@ -76,7 +76,8 @@ public class Test {
     }
     System.out.println(nodeClass);
     assert nodeClass != null;
-    VarHandle table = MethodHandles.privateLookupIn(map.getClass(), MethodHandles.lookup()).findVarHandle(map.getClass(), "table", nodeClass);
+    VarHandle table = MethodHandles.privateLookupIn(map.getClass(), MethodHandles.lookup())
+                                   .findVarHandle(map.getClass(), "table", nodeClass);
 
   }
 

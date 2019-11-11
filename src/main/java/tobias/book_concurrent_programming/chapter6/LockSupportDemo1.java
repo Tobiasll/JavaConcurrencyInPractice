@@ -57,11 +57,10 @@ public class LockSupportDemo1 {
   }
 
   private static void test5() throws InterruptedException {
-    System.out.println("test5 park start!" +  System.currentTimeMillis());
+    System.out.println("test5 park start!" + System.currentTimeMillis());
     LockSupport.parkUntil(new LockSupportDemo1(), System.currentTimeMillis() + 20000);
     System.out.println("test5 park end!");
   }
-
 
 
 }
