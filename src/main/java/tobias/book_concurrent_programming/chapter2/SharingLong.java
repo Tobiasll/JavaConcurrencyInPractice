@@ -1,7 +1,7 @@
 package tobias.book_concurrent_programming.chapter2;
 
 
-import jdk.internal.vm.annotation.Contended;
+import sun.misc.Contended;
 
 @Contended
 public class SharingLong {

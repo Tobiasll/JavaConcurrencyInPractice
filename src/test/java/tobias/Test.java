@@ -1,7 +1,5 @@
 package tobias;
 
-import java.lang.invoke.MethodHandles;
-import java.lang.invoke.VarHandle;
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadInfo;
 import java.lang.management.ThreadMXBean;
@@ -76,8 +74,8 @@ public class Test {
     }
     System.out.println(nodeClass);
     assert nodeClass != null;
-    VarHandle table = MethodHandles.privateLookupIn(map.getClass(), MethodHandles.lookup())
-                                   .findVarHandle(map.getClass(), "table", nodeClass);
+//    VarHandle table = MethodHandles.privateLookupIn(map.getClass(), MethodHandles.lookup())
+//                                   .findVarHandle(map.getClass(), "table", nodeClass);
 
   }
 
